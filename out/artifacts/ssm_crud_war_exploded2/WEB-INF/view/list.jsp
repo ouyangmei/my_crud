@@ -113,27 +113,10 @@
                     <c:if test="${!pageInfo.isLastPage}">
                         <li><a href="${APP_PATH}/emps?pn=${pageInfo.pages}">末页</a></li>
                     </c:if>
-
                 </ul>
             </nav>
         </div>
     </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-
-    </div>
-
 </div>
 </body>
 </html>
