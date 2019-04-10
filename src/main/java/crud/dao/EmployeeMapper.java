@@ -63,6 +63,7 @@ public interface EmployeeMapper {
     Employee selectByPrimaryKey(Integer empId);
 
     List<Employee> selectByExampleWithDept(EmployeeExample example);
+
     Employee selectByPrimaryKeyWithDept(Integer empId);
 
     /**

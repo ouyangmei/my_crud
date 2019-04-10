@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DepartmentService {
-    @Autowired
-    private DepartmentMapper departmentMapper;
 
+    @Autowired
+    private  DepartmentMapper departmentMapper;
     public List<Department> getDepts() {
-        List<Department> list = departmentMapper.selectByExample(null);
+        List<Department> list=departmentMapper.selectByExample(null);
         return list;
     }
 }

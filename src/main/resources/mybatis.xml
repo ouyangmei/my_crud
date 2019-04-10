@@ -11,7 +11,7 @@
     </typeAliases>
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageInterceptor">
-            <!--pageInfo合理化分页参数-->
+            <!--pageInfo合理化分页参数,当页码小于0时显示第一页，当页码大于最后一页时显示最后一页-->
             <property name="reasonable" value="true"/>
         </plugin>
     </plugins>
