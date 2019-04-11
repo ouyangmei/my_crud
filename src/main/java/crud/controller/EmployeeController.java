@@ -55,4 +55,18 @@ public class EmployeeController {
         employeeService.saveEmp(employee);
         return Msg.success();
     }
+
+    //检查用户名是否可用的函数
+    @ResponseBody
+    @RequestMapping("/checkuser")
+    public  Msg checkuser(@RequestParam("empName") String empName){
+        boolean b=employeeService.checkUser(empName);
+        if(b){
+            return Msg.success();
+        }else{
+            return Msg.fail();
+        }
+
+
+    }
 }
