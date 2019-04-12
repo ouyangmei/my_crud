@@ -233,11 +233,23 @@
         var navEle=$("<nav></nav>").append(ul);
         navEle.appendTo("#page_nav_area");
     }
+    //清空表单样式及内容
+    function reset_form(ele){
+        //清空表单数据
+        $(ele)[0].reset();
+        //清空表单中的样式
+        $(ele).find("*").removeClass("has-success has-error");
+        //清空表单中的文字提示信息
+        $(ele).find(".help-block").text("");
+
+    }
     //点击新增按钮弹出模态框
     $("#emp_add_modal_btn").click(function(){
-        //每次点击后清空表单中的信息
+        //每次点击后清空表单中的数据信息
         //去document元素,然后使用dom 的reset函数清空
-        $("#empAddModal form")[0].reset();
+        //$("#empAddModal form")[0].reset();
+        //表单完整重置
+        reset_form("#empAddModal form");
         //发送ajax请求，查出部门信息，显示在下拉列表
         getDepts();
         //弹出模态框
@@ -267,7 +279,6 @@
        var empName= $("#emp_Name_add_input").val();
        var regName=/(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFE]{2,5}$)/;
        if(!regName.test(empName)){
-
            show_validate_msg("#emp_Name_add_input","error","用户名必须是2-5位中文或6-16位英文和数字及_-的组合");
            return false;
        }
@@ -303,8 +314,6 @@
 
     //点击保存员工的方法
         $("#emp_save_btn").click(function () {
-
-
             //1.模态框中填写的表单数据提交给服务器进行保存
                 //1.先对要提交给服务器的数据进行校验
             if(!validate_add_form()){
@@ -341,12 +350,12 @@
             success:function(result){
                 if(result.code==100)
                 {
-                    show_validate_msg("#emp_Name_add_input","success","用户名合法");
+                    show_validate_msg("#emp_Name_add_input","success","用户名可用");
                     //设置一个属性来标志用户名是否合法，合法则将ajax_va属性赋值俄日success
                     $("#emp_Name_add_input").attr("ajax_va","success");
                 }
                 else{
-                    show_validate_msg("#emp_Name_add_input","error","用户名不可用");
+                    show_validate_msg("#emp_Name_add_input","error",result.extend.va_msg);
                     //设置一个属性来标志用户名是否合法，不合法则将ajax_va属性赋值俄日error
                     $("#emp_Name_add_input").attr("ajax_va","error");
                 }

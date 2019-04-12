@@ -7,16 +7,16 @@ public class Employee {
 
     private Integer empId;
 
-    @Pattern(regexp = "(^[a-zA-Z0-9_-]{6,16}$)|(^[\\u2E80-\\u9FFF]{2,5})",
-            message = "jsr303校验，用户不合法")
+    @Pattern(regexp = "(^[a-zA-Z0-9_-]{6,16}$)|(^[\\u2E80-\\u9FFE]{2,5}$)",
+            message = "用户名必须是2-5位中文或6-16位英文和数字及_-的组合")
     private String empName;
 
     private String gender;
 
     //https://blog.csdn.net/jinzhencs/article/details/51682830
     //这个网址有各种注解，实现校验功能
-    @Pattern(regexp = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$",
-            message = "jsr303校验，邮箱名不合法")
+    @Pattern(regexp = "([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$",
+            message ="请输入正确的邮箱地址")
     private String email;
 
     private Integer dId;
