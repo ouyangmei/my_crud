@@ -92,14 +92,14 @@
                     <div class="form-group">
                         <label  class="col-sm-2 control-label">empName</label>
                         <div class="col-sm-10">
-                            <input type="text" name="empName" class="form-control" id="emp_Name_add_input" placeholder="empName">
+                            <p class="form-control-static" id="empName_update_static"></p>
                             <span  class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-2 control-label">email</label>
                         <div class="col-sm-10">
-                            <input type="email" name="email" class="form-control" id="email_add_input" placeholder="email@ecut.com">
+                            <input type="email" name="email" class="form-control" id="email_update_input" placeholder="email@ecut.com">
                             <span  class="help-block"></span>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
             var editBtn = $("<botton></botton>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>")).addClass("glyphicon glyphicon-pencil")
                 .append("编辑");
-            //为编辑按钮添加属性，来表示当前id
+            //为编辑按钮添加自定义属性，来表示当前id
             editBtn.attr("edit-id",item.empId);
             var delBtn = $("<botton></botton>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>")).addClass("glyphicon glyphicon-trash")
@@ -424,13 +424,28 @@
     $(document).on("click",".edit_btn",function(){
         //alert("5");
         //1.查出员工信息，显示员工信息
+
         //2.查出部门信息，显示部门信息
+        getEmp($(this).attr("edit-id"));
         getDepts("#empUpdateModal select");
         $("#empUpdateModal").modal({
             backdrop:"static"
         });
-
     });
+    function getEmp(id){
+        $.ajax({
+            url:"${APP_PATH}/emp/"+id,
+            type:"GET",
+            success:function(result){
+                //将员工数据进行显示
+                var empDate=result.extend.emp;
+                $("#empName_update_static").text(empDate.empName);
+                $("#email_update_input").val(empDate.email);
+                $("#empUpdateModal input[name=gender]").val([empDate.gender]);
+                $("#empUpdateModal select").val([empDate.dId]);
+            },
+        });
+    }
 </script>
 </body>
 </html>
