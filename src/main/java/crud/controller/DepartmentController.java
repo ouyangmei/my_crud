@@ -31,7 +31,4 @@ public class DepartmentController {
         //此处的depts对应RequestMapping注解的depts
         return Msg.success().add("depts",list);
     }
-
-
-
 }
