@@ -97,8 +97,6 @@ public class EmployeeController {
         Employee employee=employeeService.getEmp(id);
         return Msg.success().add("emp",employee);
     }
-
-
     //如果直接发送ajax=PUT请求。封装的数据除了id外其他全是Null
     //问题是请求体中有数据，但是employee对象封装不上
     //原因是tomcat将请求体当中的数据封装为一个Map,然后从map中取值
@@ -109,6 +107,13 @@ public class EmployeeController {
     public Msg saveEmp(Employee employee){
         System.out.println("将要更新的数据："+employee);
         employeeService.updateEmp(employee);
+        return Msg.success();
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/emp/{id}",method = RequestMethod.DELETE)
+    public Msg deleteEmpByIda(@PathVariable("id") Integer id){
+        employeeService.deleteEmp(id);
         return Msg.success();
     }
 }

@@ -145,7 +145,7 @@
     <div classs="row">
         <div class="col-md-4 col-md-offset-8">
             <button class="btn btn-primary" id="emp_add_modal_btn">新增</button>
-            <button class="btn btn-danger">删除</button>
+            <button class="btn btn-danger" id="emp_delete_modal_btn">删除</button>
         </div>
     </div>
     <!--显示表格数据-->
@@ -220,6 +220,7 @@
             var delBtn = $("<botton></botton>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>")).addClass("glyphicon glyphicon-trash")
                 .append("删除");
+            delBtn.attr("delete-id",item.empId);
             var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
             $("<tr></tr>").append(empIdTd)
                 .append(empNameTd)
@@ -425,7 +426,6 @@
     $(document).on("click",".edit_btn",function(){
         //alert("5");
         //1.查出员工信息，显示员工信息
-
         //2.查出部门信息，显示部门信息
         getEmp($(this).attr("edit-id"));
         getDepts("#empUpdateModal select");
@@ -467,7 +467,6 @@
         //在配置文件中配置HttpPutFormContentFilter
         //他的作用就是讲请求要中的数据解析包装成一个map
         //request被重新包装，request.getParamter()被重写，就会从直接封装的map中取出对象
-
         $.ajax({
             url:"${APP_PATH}/emp/"+$(this).attr("edit-id"),
             type:"PUT",
@@ -480,8 +479,24 @@
                 //回到本页面
                 to_page(currentNumPage);
             }
-
         });
+    });
+    //单个删除功能
+    $(document).on("click",".delete_btn",function(){
+        //弹出确认删除对话框
+        //先取出要2删除的行的名字
+        var empId=$(this).attr("delete-id");
+        var empName=$(this).parents("tr").find("td:eq(1)").text()
+        if(confirm("确认删除【"+empName+"】吗？")){
+            //点击确认则发送ajax请求
+            $.ajax({
+                url:"${APP_PATH}/emp/"+empId,
+                type:"DELETE",
+                success:function (result) {
+                    to_page(currentNumPage);
+                }
+            });
+        }
     });
 </script>
 </body>
