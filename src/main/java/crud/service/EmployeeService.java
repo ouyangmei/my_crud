@@ -47,8 +47,15 @@ public class EmployeeService {
         employeeMapper.updateByPrimaryKeySelective(employee);
         return  employee;
     }
-
+//单个删除员工的方法
     public void deleteEmp(Integer id) {
         employeeMapper.deleteByPrimaryKey(id);
+    }
+
+    public void deleteBatch(List<Integer> ids) {
+        EmployeeExample example=new EmployeeExample();
+        EmployeeExample.Criteria criteria=example.createCriteria();
+        criteria.andEmpIdIn(ids);
+        employeeMapper.deleteByExample(example);
     }
 }

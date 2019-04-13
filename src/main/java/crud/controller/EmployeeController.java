@@ -13,6 +13,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -110,10 +111,25 @@ public class EmployeeController {
         return Msg.success();
     }
 
+    //单个批量删除二合一
     @ResponseBody
-    @RequestMapping(value="/emp/{id}",method = RequestMethod.DELETE)
-    public Msg deleteEmpByIda(@PathVariable("id") Integer id){
-        employeeService.deleteEmp(id);
+    @RequestMapping(value="/emp/{ids}",method = RequestMethod.DELETE)
+    public Msg deleteEmpByIda(@PathVariable("ids") String ids){
+        //先判断是批量还是单个删除
+        if(ids.contains("-")){
+            List<Integer> del_ids=new ArrayList<>();
+            //用split函数将string字符串分割成不带"-"的string数组
+            String[] str_ids=ids.split("-");
+            for(String string:str_ids){
+                del_ids.add(Integer.parseInt(string));
+            }
+            employeeService.deleteBatch(del_ids);
+        }else {
+            //将字符串形式转换为Integer形式
+            Integer id=Integer.parseInt(ids);
+            employeeService.deleteEmp(id);
+        }
+
         return Msg.success();
     }
 }
