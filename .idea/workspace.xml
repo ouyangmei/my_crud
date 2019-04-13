@@ -8,10 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="34864133-de41-4cfd-bc59-7ec9cc8a8e1f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssm_crud_war_exploded2/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssm_crud_war_exploded2/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ssm_crud_war_exploded2/WEB-INF/classes/crud/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssm_crud_war_exploded2/WEB-INF/classes/crud/controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ssm_crud_war_exploded2/WEB-INF/classes/crud/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssm_crud_war_exploded2/WEB-INF/classes/crud/service/EmployeeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/crud/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/crud/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud/service/EmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/crud/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/crud/service/EmployeeService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="450" column="20" selection-start-line="450" selection-start-column="20" selection-end-line="450" selection-end-column="20" />
+            <state relative-caret-position="210">
+              <caret line="480" column="40" selection-start-line="480" selection-start-column="40" selection-end-line="480" selection-end-column="40" />
               <folding>
                 <element signature="e#1310#1317#1#HTML" expanded="true" />
                 <element signature="e#4160#4167#1#HTML" expanded="true" />
@@ -72,12 +75,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/crud/controller/EmployeeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
+            <state relative-caret-position="267">
+              <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1056" />
           </provider>
         </entry>
       </file>
@@ -98,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/crud/service/EmployeeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+            <state relative-caret-position="352">
+              <caret line="47" column="24" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#344#345#0" expanded="true" />
@@ -116,18 +126,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
               <caret line="64" column="42" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/crud/service/DepartmentService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -307,7 +305,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555067965335" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555125040997" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -440,7 +438,7 @@
       <option name="presentableId" value="Default" />
       <updated>1554725126539</updated>
       <workItem from="1554725128465" duration="14229000" />
-      <workItem from="1554803946492" duration="72909000" />
+      <workItem from="1554803946492" duration="78820000" />
     </task>
     <task id="LOCAL-00001" summary="用ajax显示页时不能正常显示数据">
       <created>1554822457344</created>
@@ -477,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555063950123</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="4.11 进度：29  在员工信息修改的模态框中显示完整的员工信息">
+      <created>1555068187429</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555068187429</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -486,12 +491,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87138000" />
+    <option name="totallyTimeSpent" value="93049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.20347957" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.25642964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -501,7 +507,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.06393442" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.11311475" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -572,7 +578,8 @@
     <MESSAGE value="4.11 进度：25课  完成用ajax对添加员工信息的校验(重名，邮箱格式，姓名长度字符规定)&#10;待完善：使用change事件会有bug，以及点击保存按钮时才会对邮箱进行校验，考虑使用失去焦点事件重做校验" />
     <MESSAGE value="4.11 进度：27课  对数据的校验进一步完善，用JSR303时后端数据可能还要进行完善" />
     <MESSAGE value="4.11 进度：28  将员工信息的修改模态框中显示相关数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.11 进度：28  将员工信息的修改模态框中显示相关数据" />
+    <MESSAGE value="4.11 进度：29  在员工信息修改的模态框中显示完整的员工信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.11 进度：29  在员工信息修改的模态框中显示完整的员工信息" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mbg.xml">
@@ -581,9 +588,6 @@
           <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/66.jsp">
       <provider selected="true" editor-type-id="text-editor" />
@@ -754,8 +758,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/crud/service/EmployeeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        <state relative-caret-position="352">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#344#345#0" expanded="true" />
@@ -768,18 +772,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/crud/controller/EmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
+        <state relative-caret-position="267">
+          <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="450" column="20" selection-start-line="450" selection-start-column="20" selection-end-line="450" selection-end-column="20" />
+        <state relative-caret-position="210">
+          <caret line="480" column="40" selection-start-line="480" selection-start-column="40" selection-end-line="480" selection-end-column="40" />
           <folding>
             <element signature="e#1310#1317#1#HTML" expanded="true" />
             <element signature="e#4160#4167#1#HTML" expanded="true" />

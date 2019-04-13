@@ -42,4 +42,9 @@ public class EmployeeService {
         Employee employee=employeeMapper.selectByPrimaryKey(id);
         return employee;
     }
+//员工更新的方法
+    public Employee updateEmp(Employee employee) {
+        employeeMapper.updateByPrimaryKeySelective(employee);
+        return  employee;
+    }
 }

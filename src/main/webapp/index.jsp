@@ -180,7 +180,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    var totalRecord;
+    var totalRecord,currentNumPage;
     //1.页面加载完成以后，直接去发送一个ajax请求，要到分页数据
     $(function (){
         to_page(1);
@@ -237,6 +237,7 @@
             + result.extend.pageInfo.pages+"页，共"
             + result.extend.pageInfo.total+"条记录");
         totalRecord=result.extend.pageInfo.total;
+        currentNumPage=result.extend.pageInfo.pageNum;
     }
     function bulid_page_nav(result) {
         //每次发送ajax请求时要将分页导航栏信息清空，否则将出现重叠的情况
@@ -428,10 +429,13 @@
         //2.查出部门信息，显示部门信息
         getEmp($(this).attr("edit-id"));
         getDepts("#empUpdateModal select");
+        //把员工的Id传递给模态框按钮
+        $("#emp_update_btn").attr("edit-id",$(this).attr("edit-id"));
         $("#empUpdateModal").modal({
             backdrop:"static"
         });
     });
+    //获取员工数据并显示在页面中
     function getEmp(id){
         $.ajax({
             url:"${APP_PATH}/emp/"+id,
@@ -446,6 +450,39 @@
             },
         });
     }
+    //添加对点击更新按钮的单击事件，使其保存数据并进行校验
+    $("#emp_update_btn").click(function () {
+        //1.校验邮箱信息
+        var email=$("#email_update_input").val();
+        var regEmail= /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        if( !regEmail.test(email)){
+            show_validate_msg("#email_update_input","error","请输入正确的邮箱地址");
+            return false;
+        }
+        else {
+            show_validate_msg("#email_update_input","success","");
+        }
+        //2.发送ajax请求保存员工的数据
+        //我们要支持直接发送PUT类的请求还要封装请求体中的数据
+        //在配置文件中配置HttpPutFormContentFilter
+        //他的作用就是讲请求要中的数据解析包装成一个map
+        //request被重新包装，request.getParamter()被重写，就会从直接封装的map中取出对象
+
+        $.ajax({
+            url:"${APP_PATH}/emp/"+$(this).attr("edit-id"),
+            type:"PUT",
+            //员工修改序列化后的结果
+            //data:$("#empUpdateModal form").serialize()+"&_method=PUT",
+            data:$("#empUpdateModal form").serialize(),
+            success:function(result){
+                //关闭会话框
+                $("#empUpdateModal").modal('hide');
+                //回到本页面
+                to_page(currentNumPage);
+            }
+
+        });
+    });
 </script>
 </body>
 </html>

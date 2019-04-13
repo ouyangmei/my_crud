@@ -89,12 +89,26 @@ public class EmployeeController {
             return Msg.fail().add("va_msg","用户名不可用");
         }
     }
-
+//根据id 来查询员工的信息
     @RequestMapping(value="/emp//{id}",method = RequestMethod.GET)
     @ResponseBody
     public Msg getEmp(@PathVariable("id") Integer id){
 
         Employee employee=employeeService.getEmp(id);
         return Msg.success().add("emp",employee);
+    }
+
+
+    //如果直接发送ajax=PUT请求。封装的数据除了id外其他全是Null
+    //问题是请求体中有数据，但是employee对象封装不上
+    //原因是tomcat将请求体当中的数据封装为一个Map,然后从map中取值
+    //Tomcat一看是PUT不会封装请求体中的数据为map,只有POST请求才封装请求信息为map
+    //员工更新方法
+    @ResponseBody
+    @RequestMapping(value = "/emp/{empId}",method = RequestMethod.PUT)
+    public Msg saveEmp(Employee employee){
+        System.out.println("将要更新的数据："+employee);
+        employeeService.updateEmp(employee);
+        return Msg.success();
     }
 }
