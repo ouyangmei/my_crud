@@ -3,9 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--使用下划线与驼峰式命名规则的映射 用value="true"来开启-->
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+    <!--自动扫描的方式来配置别名-->
     <typeAliases>
         <package name="crud.bean"/>
     </typeAliases>

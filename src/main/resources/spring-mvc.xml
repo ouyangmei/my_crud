@@ -8,13 +8,14 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
     <!-- 跳转逻辑的配置 -->
-    <!-- 扫描业务逻辑组件，配置组件扫描器，注解式使用，只扫描控制器-->
+    <!-- 扫描业务逻辑组件，配置组件扫描器，include-filter type="annotation"表示注解式使用，只扫描控制器-->
     <context:component-scan base-package="crud" use-default-filters="false">
         <!--只掃描控制器-->
+        <!--在controller中引用@Controller注解时会用到此配置-->
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <!-- 2.配置视图解析器 -->
+    <!-- 2.配置视图解析器 ，视图模式配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--前綴-->
         <property name="prefix" value="/WEB-INF/view/"></property>
